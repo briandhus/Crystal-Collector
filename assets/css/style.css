@@ -1,0 +1,47 @@
+body {
+	background: url("../images/pink_dust.png");
+}
+
+.page-header {
+	background-color: #f4aa42;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	margin-top: 0;
+}
+
+p {
+	color: #7fc946;
+}
+
+#targetScore {
+	background-color: #46c9aa;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-size: 40px;
+	margin-right: 5px;
+}
+
+#wins-losses {
+	background-color: #469fc9;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#p-text {
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #ad1f5c;
+	color: black;
+}
+
+#totalScore {
+	margin-bottom: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #ad1f5c;
+}
