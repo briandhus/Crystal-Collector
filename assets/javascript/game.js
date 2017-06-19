@@ -7,14 +7,52 @@ var losses = 0;
 var computerNumber = Math.floor((Math.random() * 102) + 19);
 
 $('#targetScore').text(computerNumber);
-console.log(computerNumber);
 
-console.log
+var reset = function () {
+	
+}
+
 // make 4 chrystals for player to click
-// each chrystal is assigned a random value between 1 + 12.
-// player clicks chrystals and the assigned number gets added to a total.
+// each crystal is assigned a random value between 1 + 12.
+// player clicks crystals and the assigned number gets added to a total.
+var rubyValue = Math.floor((Math.random() * 12) + 1); 
+
+$('#ruby').on('click', function() {
+	 score += rubyValue;
+	$('#totalScore').text(score);
+});
+
+var diamondValue = Math.floor((Math.random() * 12) + 1); 
+
+$('#diamond').on('click', function() {
+	 score += diamondValue;
+	$('#totalScore').text(score);
+});
+
+var amberValue = Math.floor((Math.random() * 12) + 1); 
+
+$('#amber').on('click', function() {
+	 score += amberValue;
+	$('#totalScore').text(score);
+});
+
+var emeraldValue = Math.floor((Math.random() * 12) + 1); 
+
+$('#emerald').on('click', function() {
+	 score += emeraldValue;
+	$('#totalScore').text(score);
+});
+
+if (score === computerNumber) {
+	wins++;
+} else if (score > computerNumber) {
+	losses++;
+	$('#targetScore').reset();
+	$('totalScore').reset();
+} 
+
 // Play continues until player reaches computer number
    // if player goes over computer number, then player loses and that is added to the loss column
    // if player reaches random computer number, then player wins and it's added to the win column.
-// chrystals are assigned a new value at the end of the game
+// crystals are assigned a new value at the end of the game
 // computer generates new number at the end of each game.
