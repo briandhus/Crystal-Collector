@@ -10,8 +10,6 @@ $(document).ready(function(){
 
 	$('#targetScore').text(computerNumber);
 
-	
-
 	// make 4 crystals for player to click
 	// each crystal is assigned a random value between 1 + 12.
 	// player clicks crystals and the assigned number gets added to a total.
@@ -45,23 +43,50 @@ $(document).ready(function(){
 		 score += emeraldValue;
 		 winChecker(score)
 		$('#totalScore').text(score);
-	});
+	});	
 
 
-var winChecker = function(score){
+// Play continues until player reaches computer number
+	var winChecker = function(score){
+	   // if player reaches random computer number, then player wins and it's added to the win column.
 		if (score === computerNumber) {
 			wins++;
 			$("#wins").text("Wins: " + wins);
+			reset();
+			computerChoiceReset();
+			crystalReset();
+			
+	   // if player goes over computer number, then player loses and that is added to the loss column
 		} else if (score > computerNumber) {
 			losses++;
 			$("#losses").text("Losses: " + losses);
+			reset();
+			computerChoiceReset();
+			crystalReset();		
 		} 
-	
 	}
-})
 
-// Play continues until player reaches computer number
-   // if player goes over computer number, then player loses and that is added to the loss column
-   // if player reaches random computer number, then player wins and it's added to the win column.
-// crystals are assigned a new value at the end of the game
+// total score gets reset
+	var reset = function() {
+		score = 0;
+	}
+
 // computer generates new number at the end of each game.
+	var computerChoiceReset = function() {
+		computerNumber = Math.floor((Math.random() * 102) + 19);
+		$('#targetScore').text(computerNumber);
+	}
+		
+// crystals values are reset and assigned a new value at the end of the game
+	var crystalReset = function() {
+		rubyValue = Math.floor((Math.random() * 12) + 1);
+		$('#totalScore').text(score); 
+		diamondValue = Math.floor((Math.random() * 12) + 1);
+		$('#totalScore').text(score);
+		amberValue = Math.floor((Math.random() * 12) + 1);
+		$('#totalScore').text(score); 
+		emeraldValue = Math.floor((Math.random() * 12) + 1); 
+		$('#totalScore').text(score);
+		console.log(rubyValue);
+	}		
+});
